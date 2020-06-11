@@ -88,6 +88,31 @@ public class LinkedList {
         return size;
     }
 
+    public void reverse() {
+        // f l
+        // [10] <-- [20] <--[30] --> null
+        // p c n
+        // n = c.next
+        // c.next = p
+        // p = c
+        // c = n
+
+        if (first == null)
+            return;
+        Node previous = first;
+        Node current = first.next;
+        while (current != null) {
+            Node next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        last = first;
+        last.next = null;
+        first = previous;
+
+    }
+
     public void print() {
         Node subjectNode = first;
         while (subjectNode != null) {
