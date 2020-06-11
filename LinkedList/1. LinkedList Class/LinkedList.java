@@ -1,3 +1,5 @@
+import sun.security.ec.point.Point;
+
 public class LinkedList {
     public class Node {
         private int value;
@@ -97,7 +99,7 @@ public class LinkedList {
         // p = c
         // c = n
 
-        if (first == null)
+        if (isEmpty())
             return;
         Node previous = first;
         Node current = first.next;
@@ -111,6 +113,26 @@ public class LinkedList {
         last.next = null;
         first = previous;
 
+    }
+
+    public int getKthFromEnd(int k) {
+        // pointers p1,p2 |<----d=k-1--->|
+        // 10 --> 20 --> 30 --> 40 --> 50
+        // k = 5 4 3 2 1
+        if (isEmpty())
+            throw new IllegalStateException();
+        Node p1 = first;
+        Node p2 = first;
+        for (int i = 0; i < k - 1; i++) {
+            p2 = p2.next;
+            if (p2 == null)
+                throw new IllegalArgumentException();
+        }
+        while (p2 != last) {
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+        return p1.value;
     }
 
     public void print() {
