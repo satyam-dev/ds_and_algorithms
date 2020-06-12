@@ -20,5 +20,15 @@ class Main {
         stack.push(40);
         stack.pop();
         System.out.println(stack.isEmpty());
+
+        // Two Stacks in single array
+        TwoStacks twoStack = new TwoStacks(5);
+        twoStack.push1(2);
+        twoStack.push2(3);
+        twoStack.push2(5);
+        twoStack.push1(4);
+        System.out.println(twoStack.pop1());
+        System.out.println(twoStack.pop2());
+        System.out.println(twoStack);
     }
 }
