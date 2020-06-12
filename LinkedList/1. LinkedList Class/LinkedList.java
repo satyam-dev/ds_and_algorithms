@@ -1,5 +1,3 @@
-import sun.security.ec.point.Point;
-
 public class LinkedList {
     public class Node {
         private int value;
@@ -18,7 +16,12 @@ public class LinkedList {
         Node node = new Node(value);
         if (isEmpty()) { // empty LinkedList
             first = last = node;
-        } else {
+        }
+        // else if (size == 2) {
+        // last.next = getPrevious(last);
+        // last = getPrevious(last);
+        // }
+        else {
             last.next = node;
             last = node;
         }
@@ -170,8 +173,39 @@ public class LinkedList {
         return middle;
     }
 
+    public boolean loopDetection() {
+        Node p1 = first;
+        Node p2 = first;
+
+        while (p1 != null && p2.next != null) {
+            p1 = p1.next;
+            p2 = p2.next.next;
+            if (p1 == p2)
+                return true;
+
+        }
+        return false;
+    }
+
+    public static LinkedList createWithLoop() {
+        LinkedList list = new LinkedList();
+        list.addLast(10);
+        list.addLast(20);
+        list.addLast(30);
+
+        // Get a reference to 30
+        Node node = list.last;
+
+        list.addLast(40);
+        list.addLast(50);
+
+        // Create the loop
+        list.last.next = node;
+
+        return list;
+    }
+
     public void print() {
-        int[] arr = new int[10];
         Node subjectNode = first;
         while (subjectNode != null) {
             System.out.println(subjectNode.value);
