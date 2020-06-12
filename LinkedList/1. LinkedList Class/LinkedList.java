@@ -135,7 +135,43 @@ public class LinkedList {
         return p1.value;
     }
 
+    public int[] getMiddleNode() {
+
+        // p1 p2
+        // 10 20 30 40 50 60 70 80 90
+
+        // p1 p2
+        // 10 20 30 40 50 60 70 80 90
+
+        // p1 p2
+        // 10 20 30 40 50 60 70 80 90
+
+        // p1 p2
+        // 10 20 30 40 50 60 70 80 90
+        if (isEmpty()) {
+            throw new IllegalStateException();
+        }
+        if (first == last) {
+            int[] middle = { first.value };
+            return middle;
+        }
+        Node p1 = first;
+        Node p2 = first;
+        while (p2 != last) { // stop when p2 hits the tail
+            if (p2.next.next == null) { // check if even
+                int[] middle = { p1.value, p1.next.value };
+                return middle;
+            }
+            p1 = p1.next; // move p1 1 step ahead
+            p2 = p2.next.next; // move p2 2 steps ahead
+        }
+
+        int[] middle = { p1.value };
+        return middle;
+    }
+
     public void print() {
+        int[] arr = new int[10];
         Node subjectNode = first;
         while (subjectNode != null) {
             System.out.println(subjectNode.value);
