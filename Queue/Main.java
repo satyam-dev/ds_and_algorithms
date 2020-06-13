@@ -9,7 +9,17 @@ class Main {
         queue.add(20);
         queue.add(30);
         reverse(queue);
-        System.out.println(queue);
+        ArrayQueue arque = new ArrayQueue();
+        arque.add(10);
+        arque.add(20);
+        arque.add(30);
+        arque.add(40);
+        arque.remove();
+        arque.add(50);
+        arque.add(60);
+        System.out.println(arque);
+        System.out.println(arque.peek());
+        System.out.println(arque.isFull());
     }
 
     private static void reverse(Queue<Integer> queue) {
