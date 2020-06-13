@@ -30,5 +30,21 @@ class Main {
         System.out.println(twoStack.pop1());
         System.out.println(twoStack.pop2());
         System.out.println(twoStack);
+
+        // MinStack
+        MinStack minStack = new MinStack();
+        minStack.push(10);
+        minStack.push(5);
+        minStack.push(1);
+        minStack.push(100);
+        minStack.push(1000);
+        minStack.push(1000);
+        minStack.push(55);
+        minStack.push(0);
+        minStack.push(11);
+        minStack.pop();
+        System.out.println(minStack.min());
+        minStack.printMinStack();
+        minStack.printStack();
     }
 }
