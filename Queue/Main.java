@@ -9,7 +9,7 @@ class Main {
         queue.add(20);
         queue.add(30);
         reverse(queue);
-        // System.out.println(queue);
+        System.out.println(queue);
 
         // Array Queue
         ArrayQueue arrayQueue = new ArrayQueue();
@@ -20,9 +20,9 @@ class Main {
         arrayQueue.remove();
         arrayQueue.add(50);
         arrayQueue.add(60);
-        // System.out.println(arrayQueue);
-        // System.out.println(arrayQueue.peek());
-        // System.out.println(arrayQueue.isFull());
+        System.out.println(arrayQueue);
+        System.out.println(arrayQueue.peek());
+        System.out.println(arrayQueue.isFull());
 
         // StackQueue
         StackQueue stackQueue = new StackQueue();
@@ -32,6 +32,15 @@ class Main {
         stackQueue.remove();
         System.out.println(stackQueue.peek());
         System.out.println(stackQueue.isEmpty());
+
+        // PriorityQueue
+        PriorityQueue priorityQueue = new PriorityQueue(5);
+        priorityQueue.add(5);
+        priorityQueue.add(2);
+        priorityQueue.add(6);
+        priorityQueue.add(1);
+        priorityQueue.remove();
+        System.out.println(priorityQueue);
     }
 
     private static void reverse(Queue<Integer> queue) {
