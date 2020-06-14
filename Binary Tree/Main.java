@@ -17,5 +17,7 @@ class Main {
         bt.traversePostOrder();
         System.out.println();
         bt.traversePreOrder();
+        System.out.println();
+        System.out.println(bt.height());
     }
 }
