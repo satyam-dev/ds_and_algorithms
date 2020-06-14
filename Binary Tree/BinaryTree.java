@@ -101,9 +101,41 @@ public class BinaryTree {
         if (root == null)
             return -1;
 
-        if (root.leftChild == null && root.rightChild == null)
+        if (isLeaf(root))
             return 0;
         return 1 + Math.max(height(root.leftChild), height(root.rightChild));
-
     }
+
+    public int min(boolean isBST) {
+        if (isBST)
+            return minBST();
+        return min(root);
+    }
+
+    private int minBST() { // Time complexity - O(logN)
+        if (root == null)
+            throw new IllegalStateException();
+        Node current = root;
+        while (current != null) {
+            if (current.leftChild == null)
+                return current.value;
+            current = current.leftChild;
+        }
+        return -1;
+    }
+
+    private int min(Node root) { // O(N)
+        if (root == null)
+            return Integer.MAX_VALUE;
+        if (isLeaf(root))
+            return root.value;
+        int left = min(root.leftChild);
+        int right = min(root.rightChild);
+        return Math.min(Math.min(left, right), root.value);
+    }
+
+    private boolean isLeaf(Node node) {
+        return node.leftChild == null && node.rightChild == null;
+    }
+
 }
