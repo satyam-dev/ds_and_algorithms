@@ -21,5 +21,17 @@ class Main {
         System.out.println();
         System.out.println(bt.height());
         System.out.println(bt.min(true));
+
+        // equals
+        BinaryTree other = new BinaryTree();
+        other.insert(7);
+        other.insert(4);
+        other.insert(9);
+        other.insert(1);
+        other.insert(6);
+        other.insert(18);
+        other.insert(10);
+        other.insert(0);
+        System.out.println(bt.equals(other));
     }
 }
