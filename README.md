@@ -120,10 +120,14 @@ Define **find** method -
         return false;
     }
 ```
+---
 
+**Tree Traversal** 
 
-
-
-
-
+>Tree traversal in simple tearms means *walking the tree*. Traversals can be broadly done in 2 ways -
+> - **Breadth first** - Also known as level order traversal, we visit all the nodes at same level before visiting the nodes at next level. 
+> - **Depth first** - There are mainly 3 ways in which we achieve Depth first traversal
+>   - Pre-order - **Root**, *Left*, *Right*
+>   - In-order - *Left*, **Root**, *Right*
+>   - Post-order - *Left*, *Right*, **Root**
 
